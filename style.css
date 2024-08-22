@@ -7,4 +7,117 @@ background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 
 }
 
+.card{
+    margin: 0 auto;
+    background-color: #eeeeee;
+    padding: 5px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    margin:10px
+
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+.card::after, .card::before{
+
+    content: "";
+    position:absolute;
+    height: 100%;
+    width:100%;
+    background-image: conic-gradient(from var(--angle), transparent 50%,rgb(0, 255, 128));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 10s spin linear infinite;
+
+}
+.card::before{
+    filter:blur(1.5rem)
+    opacity(0.4);
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+
+    }
+    to{
+      --angle:360deg;
+    }
+}
+
+
+
+.container::after, .card::before{
+
+    content: "";
+    position:absolute;
+    height: 100%;
+    width:100%;
+    background-image: conic-gradient(from var(--angle), transparent 50%,blue,rgb(121, 168, 230),rgb(0, 255, 255));
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: 20s spin linear infinite;
+
+}
+.container::before{
+    filter:blur(1.5rem)
+    opacity(1);
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+
+    }
+    to{
+      --angle:360deg;
+    }
+}
+
+.load{
+    height:55px;
+    width:55px;
+    border:6px solid aqua;
+    border-radius: 4px;
+    box-shadow: 0 0 8px aqua, 0 0 8px aqua insert;
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    z-index: 10;
+    animation: 2s load ease-in-out infinite;
+}
+
+@keyframes load{
+    0%{
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+
+    }
+    33%{
+        transform: rotateX(180deg) rotateY() rotateZ(0);
+
+    }
+    67%{
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(0);
+
+    }
+    100%{
+        transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+
+    }
+}
+
 
