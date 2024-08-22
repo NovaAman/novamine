@@ -19,12 +19,13 @@
 
     .container {
       background-color: #000000;
-
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       margin-top: 0px;
+      margin-left: 7px;
+      margin-right: 7px;
     }
     .card{
       background-color: #000000;
@@ -72,6 +73,7 @@
         font-size: 30pxpx;
         letter-spacing: 5px;
         margin-top: 2px;
+        margin-bottom: 3px;
         text-shadow: 2px #ffffff;
 
     }
@@ -81,6 +83,43 @@
 
     p{
       color: white;
+    }
+
+    .audi{
+      height:20px;
+      visibility: hidde;
+    }
+
+    .play7{
+      padding-left:10px;
+      padding-right:10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      margin-left: 5px;
+      margin-bottom: 18px;
+      align-self: center;
+      align-items: center;
+      
+    }
+    .audiob{
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 12px;
+      padding-right: 12px;
+      border-radius: 8px;
+      height: 20px;
+      margin-top: 3px;
+      display: flex;
+      justify-content: center;
+      background-color: #000000;
+    }
+    h4{
+      display: flex;
+      font-size: 14px;
+      align-self: center;
+      color: #ffffff;
+      font-weight: lighter;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   </style>
 </head>
@@ -105,10 +144,25 @@
     <div class="load"></div>
     <h3>Tasks</h3>
     <p>Coming soon...</p>
-
-
-
   </div>
+
+  <audio id="myaudio" ><source src="myaudio.mp3" type="audio/mpeg"></audio>
+      <div class="audiob">
+        <h4>Wanna listen to music while mining?</h4>
+        
+  
+         <button class="play7" onclick="playAudio()">Play</button>
+      </div>
+
+     <script>
+      function playAudio() {
+          var audio =
+          document.getElementById("myaudio");
+          audio.play();
+      }
+      </script>
+
+    
 
   <script>
     let counter = 0; 
